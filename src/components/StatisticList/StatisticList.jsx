@@ -18,8 +18,11 @@ export default function StatisticList({ stats }) {
 }
 
 StatisticList.propTypes = {
-  stats: PropTypes.array,
-  id: PropTypes.string,
-  label: PropTypes.string,
-  percentage: PropTypes.number,
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };

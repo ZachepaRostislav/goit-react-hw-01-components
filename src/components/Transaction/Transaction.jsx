@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TD } from './Transaction.styled';
 
 export default function Transaction({ type, amount, currency }) {
@@ -10,3 +11,9 @@ export default function Transaction({ type, amount, currency }) {
     </tr>
   );
 }
+
+Transaction.propTypes = {
+  type: PropTypes.string.isRequired,
+  amount: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
+};
